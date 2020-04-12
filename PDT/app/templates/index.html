@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: black;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #111;
+        }
+
+        .active {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Home Page</h1>
+<ul class="nav">
+    <li><a class="active" href="{{ url_for('home.homepage') }}">Home</a></li>
+    <li><a href="{{ url_for('home.training') }}">Start Training</a></li>
+</ul>
+</body>
+</html>

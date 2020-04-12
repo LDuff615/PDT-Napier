@@ -1,0 +1,3 @@
+[console_scripts]
+nav = nav.__main__:main
+
