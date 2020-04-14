@@ -1,5 +1,5 @@
 #Importing all required modules from the Flask package
-from flask import Flask, url_for, render_template, redirect
+from flask import Flask, url_for, render_template, redirect, request
 
 #Importing PyMSQL as the interface to connect to the MySQL database
 import pymysql as mdb
@@ -22,15 +22,15 @@ con = mdb.connect('localhost', 'root', '!Gr0upPDT!', 'napierpdt')
 @app.route('/')
 @app.route('/home')
 def home():
-    return render_template('home/index.html')
+    return render_template('app/templates/index.html')
 
 #This route will take users to the Training Page, where they can select a test to begin their PDT training
 @app.route('/training')
-def training():
+def training(): 
     cur = con.cursor()
     cur.execute("SELECT * FROM tests")
     quizzes = cur.fetchall()
-    return render_template('home/app/templates/training.html', data=quizzes)
+    return render_template('app/templates/training.html', data=quizzes)
 
 #This route will take a user to the Quiz Page, where they can begin answering questions related to the quiz they selected in the Training Page
 @app.route('/quiz/<chosenquiz>')

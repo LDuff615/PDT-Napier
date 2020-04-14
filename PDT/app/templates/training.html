@@ -12,8 +12,8 @@
     <td>{{ item.testID }}</td>
     <td>{{ item.takenDate }}</td>
     <td>{{ item.userID }}</td>
-    <td><button class="choosebtn">Select Test</button></td>
     <td><button class="choosebtn" onclick="window.location.href='{{ url_for('home.quiz', chosenquiz=item.testID) }}';">Select Test</button></td>
+    <! --<td><button class="choosebtn" onclick="window.location.href='{{ url_for('home.quiz', chosenquiz=item.testID) }}';">Select Test</button></td>--!>
 </tr>
 {% endfor %}
 </body>

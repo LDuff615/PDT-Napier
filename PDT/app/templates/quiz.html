@@ -2,28 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Quiz</title>
+    <title>Refresher Training</title>
 </head>
 <body>
-<h1>Quiz</h1>
+<h1>Refresher Training - {{ chosenquiz }}</h1>
+<h3>{{ userEmail }}</h3>
 
-{% for question in qResults %}
-    <tr>
-        <td>{{ question.description }}</td>
-    </tr>
-        {% for option in oResults %}
-            {% if option.questionID == question.questionID %}
-                <br>
-                <br>
-                <tr>
-                    <td><button class="choosebtn">{{ option.description }}</button></td>
-                    <td><button class="choosebtn" option_id="{{ option.optionID }}" action="{{ url_for('home.answer', chosenopt=option.optionID) }}">{{ option.description }}</button></td>
-                    <td><button class="choosebtn" value="{{ option.optionID }}" action="{{ url_for('home.answer', chosenopt=value) }}">{{ option.description }}</button></td>
-                </tr>
-                <br>
-                <br>
-            {% endif %}
-        {% endfor %}
-{% endfor %}
+<style>
+	h1{
+		text-align:center;
+		color:red;
+	}
+	
+	h3{
+		text-align:right;
+		color:red;
+	}
+	
+	.questionnaire{
+		text-align:center;
+		border: 1px solid gray;
+		color:red;
+	}
+</style>
+
+<ul>
+	<div class="questionnaire">
+		{% for question in qResults %}
+			<tr>
+				<td>hi {{ question.description }}</td>
+			</tr>
+				{% for option in oResults %}
+					{% if option.questionID == question.questionID %}
+						<br>
+						<br>
+						<tr>
+							<td><button class="choosebtn">{{ option.description }}</button></td>
+							<td><button class="choosebtn" option_id="{{ option.optionID }}" action="{{ url_for('home.answer', chosenopt=option.optionID) }}">{{ option.description }}</button></td>
+							<td><button class="choosebtn" value="{{ option.optionID }}" action="{{ url_for('home.answer', chosenopt=value) }}">{{ option.description }}</button></td>
+						</tr>
+						<br>
+						<br>
+					{% endif %}
+				{% endfor %}
+		{% endfor %}
+	</div>
+</ul>
 </body>
 </html>
