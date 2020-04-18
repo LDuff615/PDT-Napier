@@ -42,8 +42,8 @@
       <list>
         <option value="Flask Main" />
         <option value="HTML File" />
-        <option value="Python Script" />
         <option value="JavaScript File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -218,6 +218,19 @@
       <workItem from="1586511815435" duration="8328000" />
       <workItem from="1586530562101" duration="6709000" />
       <workItem from="1586594654842" duration="15407000" />
+      <workItem from="1586765726568" duration="515000" />
+      <workItem from="1586766423500" duration="1918000" />
+      <workItem from="1586780939655" duration="8611000" />
+      <workItem from="1586861372933" duration="8484000" />
+      <workItem from="1586871938369" duration="3109000" />
+      <workItem from="1587029226482" duration="10379000" />
+      <workItem from="1587040795683" duration="8484000" />
+      <workItem from="1587107478267" duration="823000" />
+      <workItem from="1587109940252" duration="15324000" />
+      <workItem from="1587131468310" duration="9493000" />
+      <workItem from="1587196822891" duration="779000" />
+      <workItem from="1587198490418" duration="8161000" />
+      <workItem from="1587209106510" duration="3744000" />
     </task>
     <servers />
   </component>
@@ -229,42 +242,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="214" y="109" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585676450265" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1587117226663">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587117226663" />
     <state x="694" y="282" key="EnvironmentVariablesDialog" timestamp="1585654518360">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="694" y="282" key="EnvironmentVariablesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585654518360" />
-    <state width="1877" height="293" key="GridCell.Tab.0.bottom" timestamp="1586617747487">
+    <state width="1877" height="231" key="GridCell.Tab.0.bottom" timestamp="1587213597498">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="293" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586617747487" />
-    <state width="1877" height="293" key="GridCell.Tab.0.center" timestamp="1586617747487">
+    <state width="1877" height="231" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587213597498" />
+    <state width="1877" height="231" key="GridCell.Tab.0.center" timestamp="1587213597474">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="293" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586617747487" />
-    <state width="1877" height="293" key="GridCell.Tab.0.left" timestamp="1586617747487">
+    <state width="1877" height="231" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587213597474" />
+    <state width="1877" height="231" key="GridCell.Tab.0.left" timestamp="1587213597452">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="293" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586617747487" />
-    <state width="1877" height="293" key="GridCell.Tab.0.right" timestamp="1586617747487">
+    <state width="1877" height="231" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587213597452" />
+    <state width="1877" height="231" key="GridCell.Tab.0.right" timestamp="1587213597474">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="293" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586617747487" />
-    <state width="829" height="347" key="GridCell.Tab.1.bottom" timestamp="1586109298299">
+    <state width="1877" height="231" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587213597474" />
+    <state width="930" height="347" key="GridCell.Tab.1.bottom" timestamp="1587130855385">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="829" height="347" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1586109298299" />
-    <state width="829" height="347" key="GridCell.Tab.1.center" timestamp="1586109298299">
+    <state width="930" height="347" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587130855385" />
+    <state width="930" height="347" key="GridCell.Tab.1.center" timestamp="1587130855385">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="829" height="347" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1586109298299" />
-    <state width="829" height="347" key="GridCell.Tab.1.left" timestamp="1586109298299">
+    <state width="930" height="347" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587130855385" />
+    <state width="930" height="347" key="GridCell.Tab.1.left" timestamp="1587130855385">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="829" height="347" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1586109298299" />
-    <state width="829" height="347" key="GridCell.Tab.1.right" timestamp="1586109298299">
+    <state width="930" height="347" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587130855385" />
+    <state width="930" height="347" key="GridCell.Tab.1.right" timestamp="1587130855385">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="829" height="347" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1586109298299" />
+    <state width="930" height="347" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587130855385" />
     <state width="196" height="457" key="HiddenNamespacesPopup" timestamp="1585663941284">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -273,14 +290,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="900" y="166" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586274507637" />
-    <state x="661" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1586594656781">
+    <state x="661" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1587209122790">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="661" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586594656781" />
+    <state x="661" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587209122790" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/pdtLOCAL$execute.coverage" NAME="execute Coverage Results" MODIFIED="1586346669407" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pdtLOCAL$run.coverage" NAME="run Coverage Results" MODIFIED="1586612151255" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pdtLOCAL$run.coverage" NAME="run Coverage Results" MODIFIED="1587211776455" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pdtLOCAL$app.coverage" NAME="__init__ Coverage Results" MODIFIED="1586094354893" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pdtLOCAL$Flask__pdtnapier_py_.coverage" NAME="Flask (pdtnapier.py) Coverage Results" MODIFIED="1586094547429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>

@@ -3,18 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Training</title>
+    <!--
+        This page is where the user will select one of the tests available and retrieved from the database
+    -->
 </head>
 <body>
-<h1>Training</h1>
+<h1>Select test to begin PDT training</h1>
 
+<!-- For each test item in result list
+     Display test ID and button
+-->
 {% for item in result %}
 <tr>
-    <td>{{ item.testID }}</td>
-    <td>{{ item.takenDate }}</td>
-    <td>{{ item.userID }}</td>
+    <td>Test {{ item.testID }}</td>
+    <!-- Button will pass the ID of the selected test back to home/views.py to retrieve questions & options related to the selected test, then redirected to quiz.html-->
     <td><button class="choosebtn" onclick="window.location.href='{{ url_for('home.quiz', chosenquiz=item.testID) }}';">Select Test</button></td>
-    <! --<td><button class="choosebtn" onclick="window.location.href='{{ url_for('home.quiz', chosenquiz=item.testID) }}';">Select Test</button></td>--!>
 </tr>
+    <br>
+    <br>
 {% endfor %}
 </body>
 </html>

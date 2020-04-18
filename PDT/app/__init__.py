@@ -1,3 +1,4 @@
+# This file will contain the function used to load the correct configurations from config.py and instance/config.py
 # Third-party module imports
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
@@ -17,8 +18,7 @@ def create_app(config_name):
     # Changed from 'app' to 'application' 06/04/2020
     application = Flask(__name__, instance_relative_config=True)
 
-    # application.config.from_object(app_config[config_name])
-    application.config.from_object(app_config['development'])
+    application.config.from_object(app_config[config_name])
 
     application.config.from_pyfile('config.py')
 
@@ -32,10 +32,5 @@ def create_app(config_name):
     # imported and registered the home blueprint
     from .home.__init__ import home as home_blueprint
     application.register_blueprint(home_blueprint)
-
-    # NOTE: Put @app.route back in case of emergencies
-    @application.route('/')
-    def hello_world():
-        return 'HELLO THERE'
 
     return application

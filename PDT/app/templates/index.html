@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
+    <!-- This page will provide links to begin PDT training-->
     <style>
         ul {
             list-style-type: none;
@@ -35,6 +36,7 @@
 </head>
 <body>
     <h1>Home Page</h1>
+    <!--Navigation bar will redirect user to either home page or training page-->
 <ul class="nav">
     <li><a class="active" href="{{ url_for('home.homepage') }}">Home</a></li>
     <li><a href="{{ url_for('home.training') }}">Start Training</a></li>

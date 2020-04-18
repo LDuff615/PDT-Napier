@@ -2,51 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Refresher Training</title>
+    <title>Quiz</title>
+    <!--
+    This page will display each of the 10 questions for whichever quiz the user has selected.
+    The user will select one of three radio buttons for each question & submit their answer via the submit button.
+    Once the value of the option has been determined, a message will display below the question,
+    indicating whether or not the user selected the correct or incorrect response
+    -->
 </head>
+
 <body>
-<h1>Refresher Training - {{ chosenquiz }}</h1>
-<h3>{{ userEmail }}</h3>
-
-<style>
-	h1{
-		text-align:center;
-		color:red;
-	}
-	
-	h3{
-		text-align:right;
-		color:red;
-	}
-	
-	.questionnaire{
-		text-align:center;
-		border: 1px solid gray;
-		color:red;
-	}
-</style>
-
-<ul>
-	<div class="questionnaire">
-		{% for question in qResults %}
-			<tr>
-				<td>hi {{ question.description }}</td>
-			</tr>
-				{% for option in oResults %}
-					{% if option.questionID == question.questionID %}
-						<br>
-						<br>
-						<tr>
-							<td><button class="choosebtn">{{ option.description }}</button></td>
-							<td><button class="choosebtn" option_id="{{ option.optionID }}" action="{{ url_for('home.answer', chosenopt=option.optionID) }}">{{ option.description }}</button></td>
-							<td><button class="choosebtn" value="{{ option.optionID }}" action="{{ url_for('home.answer', chosenopt=value) }}">{{ option.description }}</button></td>
-						</tr>
-						<br>
-						<br>
-					{% endif %}
-				{% endfor %}
-		{% endfor %}
-	</div>
-</ul>
+<h1>Quiz</h1>
+<div>
+<!--Iterating through each Question object -->
+    {% for question in qResults %}
+        <!--
+            For each question:
+            Display question description
+            Create small form
+            Produce submit button, unique for each question
+            Produce message area, unique for each question
+        -->
+        <p>{{ question.description }}</p>
+        <form>
+        <!-- Iterating through each Option object
+             If the current option's questionID matches that of the current question in the outer loop
+             Create a radio button, which will contain the value of the option's correct field & display the option description
+        -->
+            {% for option in oResults %}
+                {% if option.questionID == question.questionID %}
+                    <input type="radio" name="option" value="{{ option.correct }}">{{ option.description }}<br>
+                {% endif %}
+            {% endfor %}
+            <button type="button" onclick="checkAnswer({{ question.questionID }})">Submit Answer</button>
+            <p id="result_{{ question.questionID }}"></p>
+        </form>
+        <br>
+    {% endfor %}
+</div>
 </body>
+    <!-- function checkAnswer:
+         Will take in the ID of the current question as a parameter
+         Gather all radio buttons related to the current question, in this case 3 radio buttons
+         Iterate through each radio button to determine which one of the 3 has been selected
+         If the current radio button's value is equal to 1
+         Display correct message in message area, specific to current question
+         Otherwise, display incorrect message in message area, specific to current question
+    -->
+<script>
+    function checkAnswer(currentQ) {
+        var ele = document.getElementsByName('option');
+
+        for(i = 0; i < ele.length; i++) {
+            if(ele[i].checked)
+                if(ele[i].value == 1) {
+                    document.getElementById("result_" + currentQ).innerHTML="Correct";
+                } else {
+                    document.getElementById("result_" + currentQ).innerHTML="Incorrect";
+                }
+        }
+    }
+</script>
 </html>
