@@ -1,6 +1,6 @@
 # This file will provide the view functions to connect to each HTML page
 # Importing modules from flask & SQLAlchemy packages
-from flask import render_template
+from flask import render_template, request, redirect
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
@@ -17,11 +17,13 @@ session = Session()
 
 # home.route - a decorator, which has a URL route as a parameter
 # home - the name of the blueprint as specified in app/home/init.py
-@home.route('/')
-@home.route('/home')
-@home.route('/index')
+@home.route('/home', methods=['POST','GET'])
+@home.route('/index', methods=['POST','GET'])
 # homepage() view function renders the index.html template
 def homepage():
+    if request.method == "POST":
+        #Logout stuff
+        return redirect('/')
     return render_template('index.html')
 
 # training() view function renders the training.html template
