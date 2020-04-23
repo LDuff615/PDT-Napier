@@ -1,0 +1,31 @@
+- Install Xampp
+
+- start apache and mysql on Xampp control panel
+
+- go to admin on mysql tab
+
+- create new database and name it flaskapp
+
+- import flaskapp.sql
+
+- keep Xampp running while starting server
+
+- go to site location on command line
+
+- enter 'python app.py' to start site server
+
+ADMIN PART:
+
+- log in with admin account (username: admin	password: password)
+
+- Will then be taken to CMS
+
+- CMS will allow you to edit, delete adn create new content in the database
+
+GUEST PART:
+
+- log in with guest account (username: guest	password: password)
+
+- Will then be taken to home page
+
+- From home page can start training (will take you to quiz choosing section but then won't work), Admin Controls (will take you back to login), PDT Toolkit (will take you to the PDT Toolkit) and Video (will take you to a video about PDTs)
