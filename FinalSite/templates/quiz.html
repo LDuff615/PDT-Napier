@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz</title>
+    <!--
+    This page will display each of the 10 questions for whichever quiz the user has selected.
+    The user will select one of three radio buttons for each question & submit their answer via the submit button.
+    Once the value of the option has been determined, a message will display below the question,
+    indicating whether or not the user selected the correct or incorrect response
+    -->
+
+    <style>
+        body {
+            font-family: Century;
+        }
+        button {
+            font-family: Century;
+            background-color: crimson;
+            border: #111111;
+            color: white;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 15px;
+    }
+        .header {
+            text-align: left;
+            background: crimson;
+            color: #111111;
+            font-size: 30px;
+        }
+        input {
+            cursor: pointer;
+        }
+        .questions {
+            border-style: solid;
+            border-width: 8px;
+        }
+        .QD {
+            font-weight: bold;
+        }
+</style>
+
+</head>
+
+<body>
+<div class="header">
+    <h1>Quiz {{ testNo }}</h1>
+</div>
+<div class="quiz">
+<!--Iterating through each Question object -->
+    {% for question in qResults %}
+        <div class="questions"> <!--20/04/2020 - added div -->
+        <!--
+            For each question:
+            Display question description
+            Create small form
+            Produce submit button, unique for each question
+            Produce message area, unique for each question
+        -->
+        <p class="QD">Question: {{ question }}</p>
+        <form>
+        <!-- Iterating through each Option object
+             If the current option's questionID matches that of the current question in the outer loop
+             Create a radio button, which will contain the value of the option's correct field & display the option description
+        -->
+            {% for option in oResults %}
+                {% if option[0] == question[0] %}
+                    <input type="radio" name="option" value="{{ option }}">{{ option }}<br>
+                {% endif %}
+            {% endfor %}
+            <br>
+            <button type="button" onclick="checkAnswer({{ question }})">Submit Answer</button>
+            <p id="result_{{ question }}"></p>
+            <a id="link_{{ question }}" href="https://staff.napier.ac.uk/services/dlte/resources/PDT/Pages/PDT.aspx"></a>
+        </form>
+        <br>
+        </div>
+    {% endfor %}
+</div>
+</body>
+    <!-- function checkAnswer:
+         Will take in the ID of the current question as a parameter
+         Gather all radio buttons related to the current question, in this case 3 radio buttons for each question
+         Iterate through each radio button to determine which one of the 3 has been selected
+         If the selected radio button's value is equal to 1
+         Display 'correct' message in message area, specific to current question
+         Otherwise, display 'incorrect' message in message area, specific to current question, plus a link to the Personal Development Tutors' Toolkit
+    -->
+<script>
+    function checkAnswer(currentQ) {
+        var ele = document.getElementsByName('option');
+
+        for(i = 0; i < ele.length; i++) {
+            if(ele[i].checked)
+                if(ele[i].value == 1) {
+                    document.getElementById("result_" + currentQ).innerHTML="Correct";
+                    document.getElementById("link_" + currentQ).innerHTML="";
+                } else {
+                    document.getElementById("result_" + currentQ).innerHTML="Incorrect";
+                    document.getElementById("link_" + currentQ).innerHTML="Click here to receive PDT advice";
+                }
+        }
+    }
+</script>
+</html>

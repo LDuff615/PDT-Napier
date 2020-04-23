@@ -1,0 +1,75 @@
+{% include "header.html" %}
+
+
+{% block body %}
+
+
+<div class="panel=heading">
+
+<h2>Add question <a class="pull-right btn btn-success" href="/">Back</a> </h2>
+
+</div>
+
+
+
+<div class="panel-body">
+
+<form action="{{ url_for('procesquestion') }}" method="post">
+<div class="form-group">
+
+    <label for="name">question Number</label>
+    <input type="text" class="form-control" name="num" id="num" required = "1"  >
+
+</div>
+
+
+
+    <div class="form-group">
+
+    <label for="name">question titles</label>
+    <input type="text" class="form-control" name="titles" id="titles" required = "1" >
+
+</div>
+
+
+
+
+        <div class="form-group">
+
+    <label for="name">question description</label>
+    <input type="text" class="form-control" name="description" id="description" required = "1"  >
+
+</div>
+
+ <div class="form-group">
+
+    <label for="name">question answer</label>
+    <input type="text" class="form-control" name="answer" id="answer" required = "1"  >
+
+</div>
+
+
+    <div class="form-group">
+        <input type="hidden" name="id" value="1">
+
+     <input type="hidden" name="action" value="edit">
+     <input type="submit" class="btn btn-success" name="submit" value="Add question">
+
+</div>
+
+
+</form>
+
+
+</div>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+{% include "footer.html" %}

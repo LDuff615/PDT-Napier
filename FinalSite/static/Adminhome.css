@@ -1,0 +1,59 @@
+html {
+	background-color: ;
+}
+  
+ .adTitleBox {
+	display: block;
+	position: relative;
+	margin: auto;
+	width: 350px;
+	height: 60px;
+	background-color: #778899;
+	top: 40px;
+	text-align: center;
+	border-radius: 2px;
+ }
+ .adTitle {
+	 display: block;
+	 position: relative;
+	 margin: auto;
+	 font-size: 25px;
+	 left: 40px;
+	 top: ;
+	 width: 350px;
+	 height: 60px;
+ }
+  
+  .Warn {
+	  display: block;
+	  position: relative;
+	  margin: auto;
+	  width: 450px;
+	  height: 90px;
+	  background-color: #8B0000;
+	  top: 70px;
+	  border-radius: 2px;
+	  
+  }
+  
+.Desc {
+	display: block;
+	position: relative;
+	margin: auto;
+	width: 550px;
+	height: 350px;
+	background-color: #B0C4DE;
+	top: 110px;
+	text-align: center;
+	border-radius: 2px;
+}
+
+.Dev {
+	display: block;
+	position: relative;
+	margin: auto;	
+	top: 180px;
+	width: 150px;
+	height: 50px;
+	border radius: 2px;
+}
