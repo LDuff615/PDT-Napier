@@ -58,26 +58,50 @@
             Produce submit button, unique for each question
             Produce message area, unique for each question
         -->
-        <p class="QD">Question: {{ question }}</p>
+        <p class="QD">{{ question[0] }}: {{ question[1] }}</p>
         <form>
         <!-- Iterating through each Option object
              If the current option's questionID matches that of the current question in the outer loop
              Create a radio button, which will contain the value of the option's correct field & display the option description
         -->
             {% for option in oResults %}
-                {% if option[0] == question[0] %}
-                    <input type="radio" name="option" value="{{ option }}">{{ option }}<br>
+                {% if option[3] == question[0] %}
+                    <input type="radio" name="option" value="{{ option[2] }}">{{ option[1] }}<br>
                 {% endif %}
             {% endfor %}
             <br>
-            <button type="button" onclick="checkAnswer({{ question }})">Submit Answer</button>
-            <p id="result_{{ question }}"></p>
-            <a id="link_{{ question }}" href="https://staff.napier.ac.uk/services/dlte/resources/PDT/Pages/PDT.aspx"></a>
+            <button id="{{ question[0] }}" type="button" onclick="checkAnswer({{ question[0] }}); this.disabled=true">Submit Answer</button>
+            <p id="result_{{ question[0] }}"></p>
+			{% for ref in ref %}
+				{% if ref[2] == question[0] %}
+					<a id="link_{{ question[0] }}" href="{{ ref[1] }}" target="_blank"></a>
+				{% endif %}
+			{% endfor %}
         </form>
         <br>
         </div>
     {% endfor %}
 </div>
+<p id="insert"></p>
+<script>
+    function checkAnswer(currentQ) {
+        var ele = document.getElementsByName('option');
+        var score = 0;
+
+        for(i = 0; i < ele.length; i++) {
+           if(ele[i].checked)
+               if(ele[i].value == 1) {
+                    document.getElementById("result_" + currentQ).innerHTML="Correct";
+                    document.getElementById("link_" + currentQ).innerHTML="";
+                    score++;
+                } else {
+                    document.getElementById("result_" + currentQ).innerHTML="Incorrect";
+                    document.getElementById("link_" + currentQ).innerHTML="Click here to receive PDT advice";       
+                }
+        }
+        document.getElementById("insert").innerHTML="Your total score on this test is: " + score;
+    }
+</script>
 </body>
     <!-- function checkAnswer:
          Will take in the ID of the current question as a parameter
@@ -87,20 +111,5 @@
          Display 'correct' message in message area, specific to current question
          Otherwise, display 'incorrect' message in message area, specific to current question, plus a link to the Personal Development Tutors' Toolkit
     -->
-<script>
-    function checkAnswer(currentQ) {
-        var ele = document.getElementsByName('option');
-
-        for(i = 0; i < ele.length; i++) {
-            if(ele[i].checked)
-                if(ele[i].value == 1) {
-                    document.getElementById("result_" + currentQ).innerHTML="Correct";
-                    document.getElementById("link_" + currentQ).innerHTML="";
-                } else {
-                    document.getElementById("result_" + currentQ).innerHTML="Incorrect";
-                    document.getElementById("link_" + currentQ).innerHTML="Click here to receive PDT advice";
-                }
-        }
-    }
-</script>
+    <button class="active" onclick="location.href ='/training'">Done?</button>
 </html>

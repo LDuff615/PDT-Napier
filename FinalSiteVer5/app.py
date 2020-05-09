@@ -317,7 +317,7 @@ def update3():
             cur = mysql.connection.cursor()
             cur.execute("""
                     UPDATE refs
-                    SET referenceLink=%s,  optionID=%s
+                    SET referenceLink=%s,  questionID=%s
                     WHERE referenceID=%s
                 """, (referenceLink, optionID, id_data))
             flash("Data Updated Successfully")
@@ -327,29 +327,45 @@ def update3():
         return render_template('login3.html')
 #end of reference table cms
 
-# LIAM'S CODE
 # training() view function renders the training.html template
 @app.route('/training')
 def training():
-    cur = mysql.connection.cursor()
-    cur.execute("SELECT * FROM tests")
-    result = cur.fetchall()
-    cur.close()
-    return render_template('training.html', result=result)
+    if session.get('logged_in'):
+
+        cur = mysql.connection.cursor()
+        cur.execute("SELECT * FROM tests")
+        result = cur.fetchall()
+        cur.close()
+        return render_template('training.html', result=result)
+    else:
+        return render_template('login3.html')
 
 # quiz() view function will retrieve questions and options from database, relating to the test ID passed in as the parameter 'chosenquiz'
 @app.route('/quiz/<chosenquiz>')
 def quiz(chosenquiz):
-    cur = mysql.connection.cursor()
-    #cur.execute("SELECT * FROM questions INNER JOIN test_questions ON questions.questionID=test_questions.questionID WHERE test_questions.testID=%s", (chosenquiz))
-    cur.execute("SELECT * FROM questions")
-    Qs = cur.fetchall()
-    #cur.execute("SELECT * FROM q_options INNER JOIN test_questions ON q_options.optionID=test_questions.optionID WHERE test_questions.testID=%s", (chosenquiz))
-    cur.execute("SELECT * FROM q_options")
-    Os = cur.fetchall()
-    #Qs = questions.query.join(test_questions, questions.questionID == test_questions.questionID).filter(test_questions.testID == chosenquiz).all()
-    #Os = q_options.query.join(test_questions, q_options.optionID == test_questions.optionID).filter(test_questions.testID == chosenquiz).all()
-    return render_template('quiz.html', qResults=Qs, oResults=Os, testNo=chosenquiz)	
+    if session.get('logged_in'):
+        cur = mysql.connection.cursor()
+        cur.execute("""SELECT DISTINCT questions.questionID, questions.description FROM questions INNER JOIN test_questions ON test_questions.questionID=questions.questionID WHERE test_questions.testID=%s""", (chosenquiz))
+        Qs = cur.fetchall()
+        cur.close()
+        cur = mysql.connection.cursor()
+        cur.execute("""SELECT * FROM options""")
+        Os = cur.fetchall()
+        cur.close()
+        cur = mysql.connection.cursor()
+        cur.execute("""SELECT * FROM refs""")
+        ref = cur.fetchall()
+        cur.close()
+        #Qs = questions.query.join(test_questions, questions.questionID == test_questions.questionID).filter(test_questions.testID == chosenquiz).all()
+        #Os = options.query.join(test_questions, options.optionID == test_questions.optionID).filter(test_questions.testID == chosenquiz).all()
+        return render_template('quiz.html', qResults=Qs, oResults=Os, testNo=chosenquiz, ref=ref)
+    else: 
+        return render_template('login3.html')
+
+@app.route('/score')
+def score():
+    return render_template('score.html')
+
 
 #runs the programs
 if __name__ == "__main__":

@@ -175,10 +175,9 @@ INSERT INTO `questions` (`questionID`, `questionTitle`, `description`) VALUES
 (25, 'question 25', 'A student has informed you that they have been called up to jury duty, what do you do?...'),
 (26, 'question 26', 'A student has come to you to ask for information on how the final degrees work, do you...'),
 (27, 'question 27', 'A student needs to prove that they were in a meeting with you, what do you do?...'),
-(28, 'question 28', 'A student comes to you and accuses you of spreading personal information that they say they only told you about, do you...'),
+(28, 'question 28', 'A student comes to you and accuses you of spreading personal information that they say they only told you about and have referred this to the academic conduct, do you...'),
 (29, 'question 29', 'A student has informed you that they wish to adopt a child, what do you do?...'),
-(30, 'question 30', 'A student comes to you and tells you that they do not feel they are getting the level of support they need on a module, do you...'),
-(31, 'question 31 ', 'your asked by a student how to write an essay what is your advice');
+(30, 'question 30', 'A student comes to you and tells you that they do not feel they are getting the level of support they need on their placement, do you...');
 
 -- --------------------------------------------------------
 
@@ -285,11 +284,9 @@ INSERT INTO `q_options` (`optionID`, `description`, `correct`, `questionID`) VAL
 (85, 'Tell them to reconsider as they still have studies', 0, 29),
 (86, 'Tell them that there is nothing you can do to help', 0, 29),
 (87, 'Inform them that they can suspend their studies if they wish and should talk to their programme leader about it', 1, 29),
-(88, 'Tell them to talk to the module leader about this and that you are here any time they need you', 1, 30),
+(88, 'Discuss the issue with them then direct them to the module leader or InPlace', 1, 30),
 (89, 'Tell them there is nothing you can do about this matter', 0, 30),
-(90, 'Tell them to just focus on the work and see how they get on', 0, 30),
-(91, 'show the edited data', 1, 3),
-(92, 'Ignore them', 1, 3);
+(90, 'Tell them to just focus on the work and see how they get on', 0, 30);
 
 -- --------------------------------------------------------
 
@@ -300,15 +297,44 @@ INSERT INTO `q_options` (`optionID`, `description`, `correct`, `questionID`) VAL
 CREATE TABLE `refs` (
   `referenceID` int(11) NOT NULL,
   `referenceLink` varchar(255) NOT NULL,
-  `optionID` int(11) NOT NULL
+  `questionID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `refs`
 --
 
-INSERT INTO `refs` (`referenceID`, `referenceLink`, `optionID`) VALUES
-(1, 'https://www.napier.ac.uk', 2);
+INSERT INTO `refs` (`referenceID`, `referenceLink`, `questionID`) VALUES
+(1, 'https://my.napier.ac.uk/International/International-Students/Pages/In-Session-Support.aspx', 1),
+(2,'https://staff.napier.ac.uk/services/dlte/resources/PDT/Documents/PDT_web.pdf',2),
+(3,'https://staff.napier.ac.uk/services/dlte/resources/PDT/Documents/PDT_web.pdf',3),
+(4,'https://my.napier.ac.uk/Academic-Study-Skills/Thinking-of-Leaving/Pages/Thinking-of-Leaving.aspx',4),
+(5,'https://ask.napier.ac.uk/article.php?id=967',5),
+(6,'https://staff.napier.ac.uk/services/dlte/resources/PDT/Documents/PDT_web.pdf',6),
+(7,'https://ask.napier.ac.uk/article.php?id=990',7),
+(8,'https://ask.napier.ac.uk/article.php?id=975',8),
+(9,'https://staff.napier.ac.uk/services/dlte/resources/PDT/Documents/PDT_web.pdf',9),
+(10,'https://staff.napier.ac.uk/services/dlte/resources/PDT/Documents/PDT_student_web.pdf',10),
+(11,'https://ask.napier.ac.uk/article.php?id=1003',11),
+(12,'https://ask.napier.ac.uk/article.php?id=981',12),
+(13,'https://ask.napier.ac.uk/article.php?id=1004',13),
+(14,'https://ask.napier.ac.uk/article.php?id=986',14),
+(15,'https://ask.napier.ac.uk/article.php?id=994',15),
+(16,'https://ask.napier.ac.uk/article.php?id=1008',16),
+(17,'https://ask.napier.ac.uk/article.php?id=976',17),
+(18,'https://ask.napier.ac.uk/article.php?id=972',18),
+(19,'https://ask.napier.ac.uk/article.php?id=968',19),
+(20,'https://ask.napier.ac.uk/article.php?id=966',20),
+(21,'https://ask.napier.ac.uk/article.php?id=1002',21),
+(22,'https://ask.napier.ac.uk/article.php?id=993',22),
+(23,'https://ask.napier.ac.uk/article.php?id=964',23),
+(24,'https://ask.napier.ac.uk/article.php?id=970',24),
+(25,'https://ask.napier.ac.uk/article.php?id=965',25),
+(26,'https://ask.napier.ac.uk/article.php?id=985',26),
+(27,'https://staff.napier.ac.uk/services/dlte/resources/PDT/Documents/PDT_web.pdf',27),
+(28,'https://ask.napier.ac.uk/article.php?id=1014',28),
+(29,'https://ask.napier.ac.uk/article.php?id=1010',29),
+(30,'https://ask.napier.ac.uk/article.php?id=995',30);
 
 -- --------------------------------------------------------
 
@@ -492,7 +518,7 @@ ALTER TABLE `q_options`
 --
 ALTER TABLE `refs`
   ADD PRIMARY KEY (`referenceID`),
-  ADD KEY `optionID` (`optionID`);
+  ADD KEY `questionID` (`questionID`);
 
 --
 -- Indexes for table `tests`
@@ -569,7 +595,7 @@ ALTER TABLE `q_options`
 -- Constraints for table `refs`
 --
 ALTER TABLE `refs`
-  ADD CONSTRAINT `refs_ibfk_1` FOREIGN KEY (`optionID`) REFERENCES `q_options` (`optionID`);
+  ADD CONSTRAINT `refs_ibfk_1` FOREIGN KEY (`questionID`) REFERENCES `questions` (`questionID`);
 
 --
 -- Constraints for table `tests`

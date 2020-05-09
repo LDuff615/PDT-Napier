@@ -1,4 +1,9 @@
- <!-- This page will provide links to begin PDT training-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <!-- This page will provide links to begin PDT training-->
     <style>
     @media only screen and (max-width:1000px){
       .container{
@@ -152,3 +157,39 @@
     }
 
     </style>
+</head>
+<body class="container">
+    <h1 id="title0">fdsf</h1>
+    <!--Navigation bar will redirect user to either home page or training page-->
+<img id="G-RoupLogo" src="static/G-RoupLogo.jpg">
+<img id="image1" src="static/image1.jpg">
+<img id="image2" src="static/image2.jpg">
+
+<div class="nav">
+  <div class="home">
+    <a class="active" href="{{ url_for('home') }}">Home</a>
+  </div>
+  <!--takes you to the test page-->
+  <a href="{{ url_for('training') }}">Start Training</a>
+  <!--take you to the toolkit napier page-->
+  <a href="https://staff.napier.ac.uk/services/dlte/resources/PDT/Pages/PDT.aspx">PDT Toolkit</a>
+  <!--this will take the user to tutiorual videos and admin Controls will take you to the login for the admin page-->
+  <div class="Right">
+    <a href="https://onlinevideo.napier.ac.uk/Play/16482">Video</a>
+    <a class="nav-item nav-link" href="/data">Admin Controls</a>
+  </div>
+</div>
+  <h1 id="title1">Score?</h1>
+  <p id="p0">
+  
+  </p>
+   
+  <!--it will logout the user-->
+<button class="LogBut" onClick = "location.href='logout'">Logout</button>
+
+<div class="footer">
+  <p><a href="https://www.napier.ac.uk/">Napier</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.napier.ac.uk/about-us/contact-us">Help</a></p>
+</div>
+
+</body>
+</html>
