@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <!-- This page will provide links to begin PDT training-->
+    <style>
+		@media only screen and (max-width:1000px){
+			.container{
+				width:1000px;
+				height:1500px;
+				
+			}
+			
+			.home a{
+				position: relative;
+				top: 0;
+				left: 0;
+				transform: none;
+			}
+			
+			.nav{
+			
+				width:100%;
+				
+			}
+		}
+		
+		.top{
+		width: 100%;
+		height: 100px;
+		top: 0px;
+		padding: 10px;
+		
+		}
+	
+		#title0{
+			color:White;
+			font-size:45px;
+		}
+		
+		#G-RoupLogo{
+			height: 12%;
+			width: 8%;
+			position:absolute;
+			left:0px;
+			top:10px;
+		}
+		
+		#image1{
+			width: 20%;
+            height: 20%;
+            right: 0px;
+			position:absolute;			
+			float:left;
+			top:0px;
+			
+		}
+		
+		ul {
+			float: left;
+			}
+		
+		#image{
+			width: 100%;
+            height: 100%;           
+			position:relative;	
+			
+		}		
+		
+		
+		.nav {
+			position: relative;
+			overflow: hidden;
+			background-color: #d9d9d9;
+			top: 80px;
+			font-family: Arial, Helvetica, sans-serif;
+				
+		}
+
+        .nav a {
+			
+            display: White;
+            color: Black;
+            text-align: center;
+            padding: 17px 16px;
+            text-decoration: none;
+			
+        }
+
+        .nav a:hover:not(.active) {
+            background-color: red;
+			color: white;
+			
+        }
+
+        .nav a.active {
+            background-color: #ff4335;
+			height:100%;
+        }
+		
+		
+		.content {
+		
+		align:center;
+		width: 47%;
+		height: 400px;
+		float: left;
+		margin-top: 70px;
+		margin-bottom:50px;
+		padding:20px;
+		text-align: justify;
+		font-family: Arial, Helvetica, sans-serif;
+						
+		}
+		
+		
+		.home a {
+			float: none;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		
+		.Right{
+			float:right;
+		}
+		
+		.LogBut {
+			
+			text-align:center;
+			position:absolute;			
+			border: none;
+			background-color:#A9A9A9;			
+			font-size: 16px;
+			right: 0px;			
+			cursor: pointer;
+			top: 0px;
+			}
+		
+		.footer {
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			background-color: #ff4335;
+			text-align: center;
+			color: white;
+			font-family: Arial, Helvetica, sans-serif;
+		}
+		
+		a{
+			color:white
+		}
+		
+		html {
+			height:100%;
+			width: 100%;
+		}
+		.Logout {
+			
+			position: fixed;
+			
+		}
+		
+		
+
+    </style>
+</head>
+<body class="container">
+    
+
+
+<div class="top">
+<img id="G-RoupLogo" src="static/G-RoupLogo.jpg">
+<img id="image1" src="static/image1.jpg">
+</div>
+
+
+
+<div class="nav">
+            <ul >
+				<a href="{{ url_for('home') }}">Home</a>
+   				<a href="{{ url_for('training') }}">Start Training</a>
+   				<a href="https://staff.napier.ac.uk/services/dlte/resources/PDT/Pages/PDT.aspx">PDT Toolkit</a>
+    			<a href="https://onlinevideo.napier.ac.uk/Play/16482">Video</a>
+				<a href="/data">Admin Controls</a>
+				<a <button class="LogBut" onClick = "location.href='logout'">Logout</button> </a>	
+				
+				
+            </ul>
+</div>
+
+<div class="content">
+
+<h1> What is this site?</h1>
+This site was created by 6 Edinburgh Napier students who were tasked with creating a website that could give PDTs refresher training for their 
+	duties as PDTs. It gives each user the chance to login with either a normal account or an admin account. The normal account can go the home page, 
+	training page and quiz page. On the home page the user is given the ability to go to the other sections of the site whilst also being able to logout,
+	learn about the site and PDTs and go to various sections throughout the site and PDT Toolkit site. The training page allows the user to view what
+	quizzes they have completed and then also go to one of the three quiz options. The quiz page allows the user to carry out whatever quiz they have
+	chosen and then be told whether they got a question right or wrong, if they got it wrong then they are given a link to the PDT Toolkit which they
+	can go to for more information. An admin user can do all the same things as what a guest user can do except that they can also go to the admin
+	controls. On the admin controls, the user is taken to the CMS (Content Managment System) which allows them to edit, add and delete questions for
+	the quizzes and allows general editing of the database, there is also instructions on how to use the CMS.
+
+</div>
+
+<div class="content">
+
+<img id="image" src="static/image2.jpg">
+
+</div>
+		
+		
+		
+<div class="content">
+
+<img id="image" src="static/student.jpg">
+
+
+
+</div>	
+
+<div class="content">
+
+<h1> What is a PDT?</h1>
+This site was created by 6 Edinburgh Napier students who were tasked with creating a website that could give PDTs refresher training for their 
+	duties as PDTs. It gives each user the chance to login with either a normal account or an admin account. The normal account can go the home page, 
+	training page and quiz page. On the home page the user is given the ability to go to the other sections of the site whilst also being able to logout,
+	learn about the site and PDTs and go to various sections throughout the site and PDT Toolkit site. The training page allows the user to view what
+	quizzes they have completed and then also go to one of the three quiz options. The quiz page allows the user to carry out whatever quiz they have
+	chosen and then be told whether they got a question right or wrong, if they got it wrong then they are given a link to the PDT Toolkit which they
+	can go to for more information. An admin user can do all the same things as what a guest user can do except that they can also go to the admin
+	controls. On the admin controls, the user is taken to the CMS (Content Managment System) which allows them to edit, add and delete questions for
+	the quizzes and allows general editing of the database, there is also instructions on how to use the CMS.
+
+
+</div>			
+	
+	<!--it will logout the user-->
+
+
+<div class="footer">
+  <p><a href="https://www.napier.ac.uk/">Napier</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.napier.ac.uk/about-us/contact-us">Help</a></p>
+</div>
+
+</body>
+</html>

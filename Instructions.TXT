@@ -10,9 +10,7 @@
 
 - keep Xampp running while starting server
 
-- go to site location on command line
-
-- enter 'python app.py' to start site server
+- go to site location on command line and enter 'python app.py' to start site server or double click app.py file and it should start up server
 
 ADMIN PART:
 

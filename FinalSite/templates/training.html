@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Training</title>
+    <!--
+        This page is where the user will select one of the tests available and retrieved from the database
+    -->
+</head>
+<body>
+
+    <style>
+    .choosebtn {
+    left: 113px;
+    position: relative;
+    top: 25px;
+    width: 200px;
+    height: 65px;
+    margin: auto;
+    font-size: 20px;
+    display:block;
+    background-color: #ff3333;
+    cursor: pointer;
+    border-radius: 8px;
+    transition-duration: 0.5s;
+    z-index: ;
+}
+.choosebtn:hover{
+    background-color: #ff8080;
+}
+
+
+h1 {
+    left: -100px;
+    position: relative;
+    font-size: 24px;
+    background-color: #ff8080;
+    width: 200px;
+    height: 60px;
+    border: ;
+    margin:auto;
+    border-radius: 4px;
+    z-index:;
+    top: 90px;
+	justify-content: center;
+	display:flex;
+    align-items: center;
+	text-align: center;
+}
+
+
+.ti {
+    background-color:;
+`   height: 300px;
+    width: 600px;
+    margin: auto;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+    top: 20px;
+    display: block;
+    font-size: 45px;
+    border-radius: 2px;
+    color: black;
+    z-index: 950;
+}
+
+
+.Desc {
+    height: 180px;
+    width: 650px;
+    background-color: #ff8080;
+    margin: auto;
+    top: 100px;
+    position: relative;
+    border-radius: 2px;
+    z-index: 950;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    padding: 10px;
+    font-size: 18px;
+    }
+
+
+.innerBack {
+    
+    position: relative;
+    display: block;
+    margin: auto;
+    background-color:; 
+    width: 675px;
+    height: 800px;
+    bottom: 200px;
+    z-index: 900;
+    
+}
+
+.logout {
+    position: relative;
+    display:block;
+    margin:auto;
+    right: 570px;
+    font-size: 17px;
+    height: 40px;
+    width: 70px;
+    top: 10px;
+    background-color: #FF6347;
+
+}
+
+.active {
+    position: relative;
+    display: block;
+    margin:auto;
+    top: -30px;
+    right: 440px;
+    height: 40px;
+    width: 80px;
+    font-size: 18px;
+    background-color: #FF6347;
+}
+
+    .nav {
+      position: relative;
+      overflow: hidden;
+      background-color: #d9d9d9;
+      top: -180px;
+      width: 100%;
+    }
+
+        .nav a {
+            float:left;
+            display: White;
+            color: Black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .nav a:hover:not(.active) {
+            background-color: White;
+        }
+
+        .nav a.active {
+            background-color: #ff4335;
+        }
+    
+    .home a {
+      float: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    
+    .Right{
+      float:right;
+    }
+    
+    .LogBut {
+      text-align:center;
+      position:absolute;
+      top: 80px;
+      left: 300px;
+      border: none;
+      background-color:#ff4335;
+      padding: 15px 32px;
+      font-size: 16px;
+      text-decoration: none;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    
+    .footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: #ff4335;
+      text-align: center;
+    }
+    
+    a{
+      color:#15d1c8
+    }
+    
+    html {
+      height:100%;
+    }
+    .Logout {
+      position: fixed;
+      display: block;
+      left: 100px;
+    }
+
+
+    </style>
+<div class = "ti" > PDT Training </div>
+<div class = "Desc"> Hi, Select one of the quiz options and you will be taken through to one of the quizzes. In the quiz you will be presented with a series of questions which you will answer by selecting an option and then pressing submit to check whether you got it correct or not. If correct, you will see a small message informing you of this, if incorrect, you will also receive a small message informing you of this and then be given a link to the 'PDT Toolkit' which will allow you to find out why you got this wrong. Each question can only be answered once so make every decision count. Once you are done you will have a button at the bottom to take you back out of the test. </div>
+<div class="nav">
+    <div class="home">
+        <a class="nav-item nav-link" href=".">Home</a>
+    </div>
+    <!--takes you to the test page-->
+    <a href="{{ url_for('training') }}">Start Training</a>
+    <!--take you to the toolkit napier page-->
+    <a href="https://staff.napier.ac.uk/services/dlte/resources/PDT/Pages/PDT.aspx">PDT Toolkit</a>
+    <!--this will take the user to tutiorual videos and admin Controls will take you to the login for the admin page-->
+    <a class="nav-item nav-link" href = "logout">Logout</a>
+    <div class="Right">
+        <a href="https://onlinevideo.napier.ac.uk/Play/16482">Video</a>
+        <a class="nav-item nav-link" href="/data">Admin Controls</a>
+    </div>
+</div>
+
+<div class="footer">
+  <p><a href="https://www.napier.ac.uk/">Napier</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="https://www.napier.ac.uk/about-us/contact-us">Help</a></p>
+</div>
+   
+<!-- For each test item in result list
+     Display test ID and button
+-->
+{% for item in result %}
+<tr>
+    <td><h1>Test {{ item[0] }}</h1></td>
+    <!-- Button will pass the ID of the selected test back to home/views.py to retrieve questions & options related to the selected test, then redirected to quiz.html-->
+    <td><button class="choosebtn" onclick="window.location.href='{{ url_for('quiz', chosenquiz=item[0]) }}';">Start Test</button></td>
+</tr>
+    <br>
+    <br>
+
+{% endfor %}
+</body>
+</html>

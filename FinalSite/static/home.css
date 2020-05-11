@@ -1,0 +1,153 @@
+ <!-- This page will provide links to begin PDT training-->
+ <style>
+    @media only screen and (max-width:1000px){
+      .container{
+        width:1000px;
+      }
+      
+      .home a{
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+      }
+      
+      .nav{
+        width:100%;
+      }
+    }
+  
+    #title0{
+      color:White;
+      font-size:45px;
+    }
+    
+    #G-RoupLogo{
+      height: 8%;
+      width: 8%;
+      position:absolute;
+      left:0px;
+      top:0px;
+    }
+    
+    #image1{
+      width: 100%;
+            height: 80%;
+            margin: auto;
+      position:absolute;
+      top:110px;
+    }
+    
+    #image2{
+      width: 100%;
+            height: 80%;
+            margin: auto;
+      position:absolute;
+      top:1500px;
+    }
+    
+    #title1{
+      color:#ff4335;
+      position:absolute;
+      top:1050px;
+      left:150px;
+    }
+    
+    #title2{
+      color:#ff4335;
+      position:absolute;
+      top:1300px;
+      left:150px;
+    }
+    
+    #p0{
+      display: table-cell;
+      vertical-align: middle;
+      text-align:center;
+      width:1000px;
+      position:absolute;
+      left:850px;
+      top:1000px;
+    }
+    
+    #p1{
+      display: table-cell;
+      vertical-align: middle;
+      text-align:center;
+      width:1000px;
+      position:absolute;
+      left:850px;
+      top:1250px;
+    }
+    
+    .nav {
+      position: relative;
+      overflow: hidden;
+      background-color: #d9d9d9;
+      top: 0px;
+    }
+
+        .nav a {
+      float:left;
+            display: White;
+            color: Black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .nav a:hover:not(.active) {
+            background-color: White;
+        }
+
+        .nav a.active {
+            background-color: #ff4335;
+        }
+    
+    .home a {
+      float: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    
+    .Right{
+      float:right;
+    }
+    
+    .LogBut {
+      text-align:center;
+      position:absolute;
+      top: 80x;
+      left: 300px;
+      border: none;
+      background-color:#ff4335;
+      padding: 15px 32px;
+      font-size: 16px;
+      text-decoration: none;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    
+    .footer {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: #ff4335;
+      text-align: center;
+    }
+    
+    a{
+      color:#15d1c8
+    }
+    
+    html {
+      height:100%;
+    }
+    .Logout {
+      position: fixed;
+      display: block;
+      left 100px;
+    }
